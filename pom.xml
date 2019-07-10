@@ -11,6 +11,7 @@
         <module>ly-api-geteway</module>
         <module>ly-item</module>
         <module>ly-item</module>
+        <module>ly-common</module>
     </modules>
     <packaging>pom</packaging>
 
