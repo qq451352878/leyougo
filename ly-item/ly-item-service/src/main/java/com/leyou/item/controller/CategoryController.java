@@ -33,6 +33,7 @@ public class CategoryController {
             }
             // 执行查询操作
             List<Category> categoryList = this.categoryService.queryCategoryListByParentId(pid);
+            System.out.println (categoryList );
             if (CollectionUtils.isEmpty(categoryList)){
                 // 返回结果集为空，响应404
                 return ResponseEntity.notFound().build();

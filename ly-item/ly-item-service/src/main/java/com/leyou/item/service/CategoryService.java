@@ -69,6 +69,10 @@ public interface CategoryService {
      * @return
      */
     List<Category> queryAllCategoryLevelByCid3(Long id);
-
+    /**
+     * 根据parentId查询类目
+     * @param pid
+     * @return
+     */
     List<Category> queryCategoryListByParentId(Long pid);
 }

@@ -74,8 +74,15 @@ public class CategoryServiceImpl implements CategoryService {
         return null;
     }
 
+    /**
+     * 根据parentId查询子类目
+     * @param pid
+     * @return
+     */
     @Override
     public List<Category> queryCategoryListByParentId(Long pid) {
-        return null;
+
+        List<Category> list=categoryMapper.queryCategoryListByParentId (pid);
+        return list;
     }
 }

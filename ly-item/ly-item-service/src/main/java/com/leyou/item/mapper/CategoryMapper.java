@@ -47,4 +47,11 @@ public interface CategoryMapper extends Mapper<Category>, SelectByIdListMapper<C
      */
     @Select("SELECT * FROM `tb_category` WHERE id = (SELECT MAX(id) FROM tb_category)")
     List<Category> selectLast();
+    /**
+     * 根据parentId查询类目
+     * @param pid
+     * @return
+     */
+    @Select ("SELECT * from tb_category WHERE parent_id =#{parent_id}")
+    List<Category> queryCategoryListByParentId(Long pid);
 }
