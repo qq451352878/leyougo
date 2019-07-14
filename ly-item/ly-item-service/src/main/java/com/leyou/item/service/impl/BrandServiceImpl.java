@@ -7,6 +7,7 @@ import com.leyou.common.pojo.com.leyou.common.parameter.BrandQueryByPageParamete
 import com.leyou.item.mapper.BrandMapper;
 import com.leyou.item.pojo.Brand;
 import com.leyou.item.service.BrandService;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.entity.Example;
 
