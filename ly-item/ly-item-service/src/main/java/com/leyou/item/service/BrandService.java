@@ -12,4 +12,18 @@ public interface BrandService {
      * @return
      */
     PageResult<Brand> queryBrandByPage(BrandQueryByPageParameter brandQueryByPageParameter);
+
+    /**
+     * 分页查询
+     * @param page
+     * @param rows
+     * @param sortBy
+     * @param desc
+     * @param key
+     * @return
+     */
+
+    PageResult<Brand> queryBrandByPageAndSort(
+            Integer page, Integer rows, String sortBy, Boolean desc, String key);
+
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -29,11 +30,12 @@ public class CategoryController {
         try {
             if (pid == null || pid.longValue() < 0){
                 // pid为null或者小于等于0，响应400
+                Example example=new Example (Category.class);
                 return ResponseEntity.badRequest().build();
             }
             // 执行查询操作
             List<Category> categoryList = this.categoryService.queryCategoryListByParentId(pid);
-            System.out.println (categoryList );
+
             if (CollectionUtils.isEmpty(categoryList)){
                 // 返回结果集为空，响应404
                 return ResponseEntity.notFound().build();
