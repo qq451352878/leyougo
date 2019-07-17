@@ -4,6 +4,8 @@ import com.leyou.common.pojo.PageResult;
 import com.leyou.common.pojo.com.leyou.common.parameter.BrandQueryByPageParameter;
 import com.leyou.item.pojo.Brand;
 
+import java.util.List;
+
 public interface BrandService {
 
     /**
@@ -25,5 +27,12 @@ public interface BrandService {
 
     PageResult<Brand> queryBrandByPageAndSort(
             Integer page, Integer rows, String sortBy, Boolean desc, String key);
+
+    /**
+     * 品牌的新增
+     * @param brand
+     * @param cids
+     */
+    void saveBrand(Brand brand, List<Long> cids);
 
 }

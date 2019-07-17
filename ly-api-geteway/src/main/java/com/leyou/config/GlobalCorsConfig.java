@@ -16,6 +16,11 @@ public class GlobalCorsConfig {
         //1) 允许的域,不要写*，否则cookie就无法使用了
         config.addAllowedOrigin("http://manage.leyou.com");
         config.addAllowedOrigin("http://www.leyou.com");
+        config.addAllowedOrigin("http://manage.leyou.com:10010");
+        config.addAllowedOrigin("http://www.leyou.com:10010");
+        config.addAllowedOrigin("http://manage.leyou.com:9001");
+        config.addAllowedOrigin("http://www.leyou.com:9001");
+        config.addAllowedOrigin("http://localhost:9001");
         //2) 是否发送Cookie信息
         config.setAllowCredentials(true);
         //3) 允许的请求方式

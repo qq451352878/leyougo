@@ -1,12 +1,15 @@
 package com.leyou.item.controller;
 
 import com.leyou.common.pojo.PageResult;
+import com.leyou.common.pojo.com.leyou.common.parameter.BrandQueryByPageParameter;
 import com.leyou.item.pojo.Brand;
 import com.leyou.item.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "brand",method = RequestMethod.POST)
@@ -25,12 +28,24 @@ public class BrandController {
             @RequestParam(value = "sortBy", required = false) String sortBy,
             @RequestParam(value = "desc", defaultValue = "false") Boolean desc,
             @RequestParam(value = "key", required = false) String key) {
-        PageResult<Brand> result = this.brandService.queryBrandByPageAndSort (page, rows,sortBy ,desc ,key );
+        PageResult<Brand> result = this.brandService.queryBrandByPage (new BrandQueryByPageParameter (page, rows,sortBy ,desc ,key )) ;
         if (result == null || result.getItems().size() == 0) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         System.out.println (result );
         return ResponseEntity.ok(result);
+    }
+
+    /**
+     * 新增品牌
+     * @param brand
+     * @param cids
+     * @return
+     */
+    @PostMapping
+    public ResponseEntity<Void> seveBrand(Brand brand,@RequestParam("cids") List<Long> cids){
+        brandService.saveBrand (brand,cids);
+        return ResponseEntity.status (HttpStatus.CREATED).build ();
     }
 
 }

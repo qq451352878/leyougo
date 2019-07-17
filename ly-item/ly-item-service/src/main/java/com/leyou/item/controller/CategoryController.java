@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
-
 @Controller
 @RequestMapping("category")
 public class CategoryController {
