@@ -24,6 +24,7 @@ public class UploadController {
      */
     @PostMapping("image")
     public ResponseEntity<String> uploadImage(@RequestParam("file")MultipartFile file){
+        System.out.println ("进入了图片上传的方法" );
 
         String url=uploadService.uploadImage(file);
         if(StringUtils.isNotBlank (url)){

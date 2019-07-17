@@ -42,8 +42,9 @@ public class BrandController {
      * @param cids
      * @return
      */
-    @PostMapping
+    @RequestMapping("addBrand")
     public ResponseEntity<Void> seveBrand(Brand brand,@RequestParam("cids") List<Long> cids){
+        System.out.println ("进入了新增品牌方法" );
         brandService.saveBrand (brand,cids);
         return ResponseEntity.status (HttpStatus.CREATED).build ();
     }
