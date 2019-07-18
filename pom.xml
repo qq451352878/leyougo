@@ -13,6 +13,8 @@
         <module>ly-item</module>
         <module>ly-common</module>
         <module>ly-upload</module>
+        <module>leyou-user</module>
+        <module>leyou-sms-service</module>
     </modules>
     <packaging>pom</packaging>
 
