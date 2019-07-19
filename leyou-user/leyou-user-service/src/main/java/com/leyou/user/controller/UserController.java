@@ -30,19 +30,7 @@ public class UserController {
         return ResponseEntity.ok(boo);
     }
 
-    /**
-     * 注册
-     * @param user
-     * @param code
-     * @return
-     */
-    @PostMapping("register")
-    public ResponseEntity<Void> register(User user, @RequestParam("code") String code) {
-        Boolean boo = this.userService.register(user, code);
-        if (boo == null || !boo) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-        }
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
+
+
 
 }
