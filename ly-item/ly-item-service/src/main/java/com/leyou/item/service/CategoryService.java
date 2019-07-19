@@ -1,5 +1,6 @@
 package com.leyou.item.service;
 
+import com.leyou.common.com.leyou.myexception.MyException;
 import com.leyou.item.pojo.Category;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public interface CategoryService {
      * @param pid
      * @return
      */
-    List<Category> queryCategoryByPid(Long pid) throws Exception;
+    List<Category> queryCategoryByPid(Long pid) throws MyException;
 
     /**
      * 根据brand id查询分类信息
@@ -50,6 +51,7 @@ public interface CategoryService {
      */
     List<String> queryNameByIds(List<Long> asList);
 
+
     /**
      * 查询当前数据库中最后一条数据
      * @return
@@ -69,10 +71,4 @@ public interface CategoryService {
      * @return
      */
     List<Category> queryAllCategoryLevelByCid3(Long id);
-    /**
-     * 根据parentId查询类目
-     * @param pid
-     * @return
-     */
-    List<Category> queryCategoryListByParentId(Long pid);
 }
